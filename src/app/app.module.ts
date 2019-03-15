@@ -1,24 +1,40 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router'; 
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
+import { HomeComponent } from './home/home.component';
+import { TodosComponent } from './2-todos/todos.component';
+import { UserDetailsComponent } from './3-user-details/user-details.component';
+import { VoterComponent } from './1-voter/voter.component';
+
+import { routes } from './app.routes';
+import { UsersComponent } from './users/users.component';
+// import { NavComponent } from './nav/nav.component';
+import { HighlightDirective } from './highlight.directive'; 
+
+import { TodoService } from './2-todos/todo.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent
+    HomeComponent,
+    TodosComponent,
+    UserDetailsComponent,
+    VoterComponent,
+    UsersComponent,
+    // NavComponent,
+    HighlightDirective,
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     FormsModule,
-    NgbModule,
-    AppRoutingModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [TodoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
