@@ -1,5 +1,4 @@
 .voter {
-    width: 20px;
     text-align: center;
     color: #999;
 }
@@ -10,9 +9,16 @@
 
 .vote-button {
     cursor: pointer;
+
 }
 
 .highlighted {
     font-weight: bold;
     color: orange;
+}
+i.glyphicon-menu-up:after{
+	content: '  up   ';
+}
+i.glyphicon-menu-down:after{
+	content: '  down   ';
 }

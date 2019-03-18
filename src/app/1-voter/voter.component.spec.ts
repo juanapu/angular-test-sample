@@ -24,4 +24,14 @@ describe('VoterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should render',() => {
+    component.othersVote = 20;
+    component.myVote = 1;
+    let debugE = fixture.debugElement.query(By.css('.vote-count'));
+    let el: HTMLElement = debugE.nativeElement;
+
+    expect(el.innerText).toContain('21');
+  });
+
 });
